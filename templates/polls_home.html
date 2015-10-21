@@ -1,0 +1,16 @@
+<h1>{{ title }}</h1>
+<hr>
+
+
+<a href="/polls/5">SingleNumber 5</a><br>
+<a href="/polls/5/results">Asign SingleNumber to results </a><br>
+<a href="/polls/5/vote">Vote </a><br>
+
+<p>Last {{ latest_question_list|length }} Questions:<p>
+{% if latest_question_list %}
+	{% for question in latest_question_list%}
+		{{forloop.counter}}.{{question}}<p>
+	{% endfor %}
+{% else %}
+	<p>No Questions be Votes!</p>
+{% endif %}
