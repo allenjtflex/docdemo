@@ -9,7 +9,7 @@
 <p>Last {{ latest_question_list|length }} Questions:<p>
 {% if latest_question_list %}
 	{% for question in latest_question_list%}
-		{{forloop.counter}}.{{question}}<p>
+		<a href="/polls/{{question.id}}">{{forloop.counter}}.{{question.id}}{{question}}</a><p>
 	{% endfor %}
 {% else %}
 	<p>No Questions be Votes!</p>
